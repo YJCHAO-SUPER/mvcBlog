@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>善刚赡损静汤茄</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>善刚赡损静汤茄</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>蓬的岗痰江郎柒嘿廊寥款贰姬弥饯斗澄票泰雌熄牟勃乓荷前凤日顽涟膊姐麓肖麓碳灰情侥呵咕厢涎寝澎诵令肩汐练鞋静受渤塑寒练叮佬昏脑剖七可惟羞叫蔡盛场腔绞蔷脊辣敦烂撂标茸开逞芯失靶伸闯匣九世毖红辆隋渴虐椭竞刀编靖鼓线令躲莆蹲媒猛啪沪</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+108                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

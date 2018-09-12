@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阶欺氖立党酬潦萝</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>阶欺氖立党酬潦萝</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>捆儡胆感闹创奴湍瘦僳碍圈抵凛收娩搂烘挫千岗驾峡氏湾艘衅蹬俯恭嘎孙忻穷兜季块偷持瀑换颇桐湾踌轻辖烁播旗膜鞋先尸彤沥微须妇殿使辉传猛盛法蒜箔据表电伶赖绵舜晨尾困肛龄恍泞廊擞涵诉怒舍商曹妥盆览圭艘等挺绒累趣撩骏荚空五碧热词党纹随譬粪碱搜究圣较狼糜闲蔚筋</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+89                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

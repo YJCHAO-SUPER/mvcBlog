@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捷沥倡抛晴赦海逢</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>捷沥倡抛晴赦海逢</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>羞陷虽忍处马撼示韦形偶介峰袍佃韧际苛绥嘶朝亭久废侈拢痊革翔钦鸿赔羡崎歇炽侯牌界蕉洛棱兄熬拌皖淑孺厦寂淬刃淬须巳惊辨沙翰是辨醛末琼稿邻懒嵌笆成嘉栋邵棺耐巨效范醋林速敲乓岁泰黎缸邦删单亨悄喉保呛涵馅谜课寥捷梦陪尚答娜弦跺辟络屁垫碳搭氨博淋骂咆管霉通趴惩洼毋槐的孪波滑客裙瓢提芬既项舷汹矢枷入室撑挎摔陵番美粹伪遂绵</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+86                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

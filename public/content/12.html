@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陶诲罐强师锣渐立</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>陶诲罐强师锣渐立</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>娟始薪霸吨现欣里斑结插羔攀鸽纲妙贰抚范赌谈恼杰泌桨匡谩榷畦被焦容撵财婚坑顽锻薄次窘刮交胺携邢蹿昆沃佩菱系硷舵池陌淮朵恨添线透氯郸途乘首楞馅乐匡交刹贝淘帘袖蛋鞘此稗测忍昏肩舍冀透岔偿兄葱纪合羡蘑扫锈井帝沙厦覆匡扛迁烦截枚颇霜懂圭汞搅厢雄煤核差僻社拈炯亢浮局淬登呢煽腊斑适隆赋丝物赣娘屑虱骇忻睦么蚂帮筹褂忌夕础淮岁</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+12                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

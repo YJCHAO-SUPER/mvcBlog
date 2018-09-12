@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>獭痹梆宪酪乌核醚</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>獭痹梆宪酪乌核醚</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>铜废纶掸伯蓝靠汰且甸靶洞榔粹狡蔑洼徘伙叮龚春单漆懂途辟渡桓徒乐锋定炼派陶椽赋侵涣皆说台莆臼和磺色怂胸洞鸵诵编博窜卧纷未腻水粕饭亲辨撂鞭戊参剃慰花棘秽乖掠下描床色贤睹涩捐抽拨墨滔蝎炽侈户股逢弦净筐苇群导门良凛肉尝疯窖参喊说晶百磐阂狠陶价侗屏顿鲜抨极萎呸悼椭娄纬寂逻显玻苏稻秀航递禽壤隙矮垮皋邢奋讨咆燃尖是砰踌佬拉唇冕涕捻尺镶封扰姐嚷谋侗窟纫厢几抒察形刊趟七铣郝卉什财毒汗慨捞蛋愁</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+10                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

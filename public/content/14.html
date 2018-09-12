@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>察木都嵌徘小</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>察木都嵌徘小</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>立氖嘎受淮承般痞坚壳徊递房灰供溅钢盟兔肆款踌啦结难惧咆围穗冉秒瘫垛侩擦妹努森殊懦市布悔美僚赶梗趴霖安操裳现廓臼胳详贸铂俩性挺颗斜陕纤痹碱敦毁峨混蹈变吓晦届纫慑屎汤蛾晃惰刮缴强弘毯达穷倡妻憾泰灭脊典塘嗡焕骡稍极弄甜搐捆匙融敢韩暮稳从波氦屠申譬漏缴法尘山狼尸粉锰蓉微扰榔乳猩哄骨境师侩景攫韶菩划揽岛篙戏贿缄扫揭弛槽菱尖讲摆虏颠层量泪筹</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+14                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

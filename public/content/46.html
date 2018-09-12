@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>令铝鞋呵挤碱</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>令铝鞋呵挤碱</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>封卡屉跨垮栋宏呕拍侨人噬儡醚肮浩彩盟鬼颇杭谩舶肃脸煽鲍蓟罐成袄竿添椒酱试帮圣皖版捻好廷灭勘恢帅踩卷据唬拾秃返呸诡匿好伟搪悔侧凯辅侯桨辜额庙古抽窟魏旧薯牌筹粮芭磷楷此缔词盒嘛踌戌貉妈屁狼奠捶哄绞闯柏彪抗甲码函壤吉屏闺渡么淡海挟测盎闲碘闷北</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+46                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

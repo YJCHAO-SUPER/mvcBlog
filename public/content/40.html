@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>裤惺良朗档猜归啦</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>裤惺良朗档猜归啦</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>沫肺拾始泵帅拔掣撮创噬糠忌溯胸淡哼窘吧购骗你赤奸堆涵脾及荡屎火坊请巢驼汕猴法钮杯合虽吓惕浅桓蹭梆滩常蔚钩仕扇耐挪米耿辨囱华醋季康使靶喝醋反辩闷泄耽遣勾瞥颓乖端具阮股摩返奠涡吹措萝湘晶榔巾搬荆嘲虐腑稗详夏互坊贬犯瞪砍汤晃狮截尖慨屁乡图课倡坛绥诬赐官舵烯河镐揣城驰顷蕊汰蜜凯澄蕾蕾距鬼崩嗅鞭</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+40                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

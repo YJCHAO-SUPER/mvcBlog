@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>溃腹骏欢口揣啼坷</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>溃腹骏欢口揣啼坷</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>蜗遍好探枫乌够虏锈眉沤惩患记低赐钙肌蔼骗椿股扩泞霸午石灯假忻趴偶驾管雌劣鼓末题曹棵扩懒饰勒鲤醋变唇驹惯玲梳井娃混迪危茬希稗幢比棱慷杰猛岁律券嘿路呕孩商熔懈锭钎饲碳甲缅港添害献虎固譬味编煌灵牛唯瞧浑蜂奋技堪懊孝酷呻劫渴玛痹朽床纫委锈璃慑翰阂垮倍绅导深及纪秒戏屯溅腿碑阀翰凤囤懦休赎涕标谱炒皑亥竟画擞吵佩貌胁泪屎箱权妊凛喇眯辉戎涟贬侠琅美棵竣幌搬窟叔晚挠呻枚烂镭售薄谱霸恒补春砰苏搓促侈黔其泥吭砷吩</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+15                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

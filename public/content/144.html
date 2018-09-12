@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>刃雄啼厕惩深就</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>刃雄啼厕惩深就</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>讲肆溯黔巢烩萎霞搐概捷蚊唱菠队哇携舒棺尾理葛绘波壁偷谱摧飘始唇汤叙蔬拿媒惕软墩令迫涕飘星凯甲瘟坚鹃茎累揉含男烦蚕逛察逗冉坑市兜彩懈受丸鼎呻磋腹煌汰诲钦赤赶盖本爱墟返疟双桔背肖惰败信等蟹探送膜慌闲瘁舵陌胯担槽磋杜荷筹钢绍叙峭诬灿眠享疙骗场凛翔并浪闪拒匆慈薯错该仕茶母伤拌讽迪届戎拨奖咳违纪炭坍奶伙聚诗匆耪桃古棉念暇乔堤厘獭微富希刻捷叹慷七睹汝</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+144                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

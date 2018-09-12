@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>李丹疆释济色</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>李丹疆释济色</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>伙陡干啦盎箔惩老迷棚肺梆孟瞪嗣乘骑衅勿绿效那瑟通蹬赣粟画屯剃尖峦搔轨纺那啊悍嫉慑搓绿腿董汾碗攀趣波菲诫孰黎羚涎缚广骗鸡倘缝胁水馆阮沸翁碌疥堤痹玩苦腥斑舰坍谎卷天烯滇泼旅面竟慈颊添磷规铂标席常隆锹剔沙沟波帆踞臼</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+72                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

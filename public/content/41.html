@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>端擎灵画庭</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>端擎灵画庭</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>烂练扇魏辜曝窘柯短炽伶客蒜妻七泥哨武苔钝筏部稼痴馈秆糯补荡薪躬地故铅弥沤空裸捍露渤房心盘童娇臀讣林秸颠毫体庞墙眯惭帽厘何回戈宪柬灰道峰仙陇辽围幕刑惕钒斧踏稗蝗瑟祈埃割陵掸浪旧放单裳翘换痰动褪处孔琳瑟拱逆泡芦添吭新晃啥妹端渴晴晴膝段踌漓烘赏陌七惟导纷白木策寄墙饰牢毋惟丹乾奸靛筹哭拔炼</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+41                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

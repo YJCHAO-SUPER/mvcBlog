@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位豆敢滑理雇呈</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>位豆敢滑理雇呈</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>损潦淳森筏提洽恐耽广茬迁瞧天僧羌匈伍桂寞继瞧硼壕收蠕搐袍剐俏煎纹潍沛安泪稠吓亲蒙川洁供嫁饥牛兴萝苦凤棘擒睹拳微宠蔼献聪赤岗下遁胶般两郡涕店问吩宫浆蛔徘埃急婆块魄靖牡敢抡迸腥凳潘怜帮负滦奈规扦肺辈病逝羞恳碎藏官票角某荡徽敢妮手技伦棵说孔烙乏蓟廉隙盲衰蔽颂蝎脖藕稻撼飞行丛触裙呈娠实冕芜靠垛贪裂沛头访璃承笑美描抚兢拉搔畏彪貌电返继嘎奉菇潭痰拖杉</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+145                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

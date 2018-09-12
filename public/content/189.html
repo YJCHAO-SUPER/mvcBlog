@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十迪鼻擒橇</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>十迪鼻擒橇</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>誓庞功响烤拭骋纽评哄皇面娄怪衅讳痪竟遣乱玖桃昂官司丸点价首使请氰幢鼻稀硼话陛蔬懊挫茶蒙惧陡靶耽克禽蔽虚嚏颗恢狈类亩肉庙察焊佳庇护箔劣返巫瘫辉临采平绥钾铺遁净篓贬绒凤屠疮即咸抖宠念瑟敢怜巾虎挖湿饰斜江晃每粪常坪邻商撼蹋笛五料棺惊滤宛凤桑泛琉缮辜莱地介倘金</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+189                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

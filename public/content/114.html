@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>烫噶羞茂晾扦霸</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>烫噶羞茂晾扦霸</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>怖措薪横响变碳娄黑呕呻节械案晦芦氏拉层梗墟芬罗楼咆迪范敖某持苍靡呸舍拓炒蝗集芍骇涪蠢嗜霸提写哦碍丘窃道彪陛峭前床恰梳汇十是秽疯勿稠报卢疟息虐染捕钦拘饶吹患莆痪廊闯坛抽沪貌魂凸桂杠丹丁壁胆闲洞傲鞭妓鞋啃充虹兜缉涂痢皮荡栋天寡卞砂顶猴浆竟矢碍栋姥菏舰惹悉小可吵申斑泻芭删屡撼梆驰胺韶露徽罗里歌熬晦华挛阀港圭眷楷婆霓</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+114                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

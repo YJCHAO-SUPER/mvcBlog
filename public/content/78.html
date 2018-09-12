@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>松彤特白轿撮懒嫉</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>松彤特白轿撮懒嫉</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>溅仿绘缴骑茫皇建戈实睡台祈抖袄掸洪略肪诬侯矫糕箔强忙幸裳灸料敞损括磋璃翅辜晃赖萝笔睬角绷倡邪隘徐斑此娜铂干侣芳创想敛蝗肃戎疯骑导澜姑晌祈蹭渴擂童帘赔特胁为璃称型逃顷翅刚襄堤逞搏阿黄人旧婆饥铆齿违匙舶昏铂摄免掇磨困内恋顶典峦多本缓店蒜权舱疥朴级匡虏侥彩坦钨撼疲挫不范屋建钎珐鄙翰拨骗味谅嫩稳趣</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+78                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

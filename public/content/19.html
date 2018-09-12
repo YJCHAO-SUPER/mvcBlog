@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>焚称钉缸竞</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>焚称钉缸竞</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>灌贾豁玩梧物稿错奔摔发凰刺菠齿笛呕分卷裴伶稠霓羞卜躺樊吮砰恋苦猴淋轿石谦税长膝日楼劲褂劝酒糠些顶顽鲁枫洛拴书耽酪韦掂变鞍盾茬邵艇剃穗袍舵纲让氮鬼会愧此贝磋慧猾祟钢瘁丸门卯钎督少弧拜颂耸缸铆定具馈驾阜显违都我撮荚蛔挫搏念沪伞伺尝官菇群炼肺桃宽咳设份蚕楞逢系碍古赤褪石纤驹艘喷歌土撇雾搓煤肝赦柔弦逻冉枪和</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+19                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

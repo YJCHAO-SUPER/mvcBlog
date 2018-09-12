@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>咆虐吭污藩悼</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>咆虐吭污藩悼</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>荣膝恃构许烈啤睹普集肆穿陡劳玖嫌厘办蜂诺副恐抢喂蠕悲释陶姥俩欺聪霞篇葱叔眉芍申档笨粒辱价罗幌惶卉槽徽祷吨不遂肉盛搂憋梦恢壕馈婚挠纠骸堡板惊舞擂草衰仆火净靡豹炕娟暇婪匙平诧嘛构匆共氖毯扒蜂磺似揉钠建蛋盗喘孙翰陋谴戌狄强贩攘绍古敌桅蓟料码什郎悔橇辆惫秤涎摊叔板熟侣</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+199                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

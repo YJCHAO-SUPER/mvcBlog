@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>勒捍恰仑苔眉纶倦</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>勒捍恰仑苔眉纶倦</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>鼻鞠题膏抬婆撑舍救饰伸竭信里菩到算降律帅疥陈姑澈客赦抱伸久腻疏弓祟韩扇炔梨净泵介茅璃碘档巾阜究砂堆溯吠孟篡导酸赔说芦茨记沤茧俱搓位蛋钠肪熔娇商驰伦侩搬贝瘦侮糙拎凳程滦蠕骇擂暖猛红掀风匿建脾孤溯奴喜渺词伸罚燎年疽郡城具睡交吐脓镭稼刹拍鲤酗露妒皋呜祈蓖嘉沏讳狡船蔼辫斥筹卧考缎熬粮午确殊涎期忻浅天讳前复歉痹缝谋匿搽皆盼骚许筹</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+128                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

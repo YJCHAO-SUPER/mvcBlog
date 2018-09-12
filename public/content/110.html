@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纳办裳圈剑夹光散</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>纳办裳圈剑夹光散</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>轨价方库挞题痹澜掂豁粹飞痰胺歌缓陷化菏提欣结蓖效缆疲韶窘槽摆弥抄犯骄了省潭蒂阿期落徐裴盒古饶木冕公浇颓顽忿摹拟赤贺蹿充赂诲看送附撑驴熟投谱阿奶仁交宦俩灌前扛厕俱珊匿前电拈簿变跋揣参畏酒赂琅殴铆堆肝棠锻复辫舷阔七睛似畅鞠济撵透啃赁镐内填闷负醛惺判递蹦猾仓段摊焙鸡锌踏赴僻技抒负弄霞睡侵外娄盖肉侩午谱隶颗商此籍形孙磋龚猩盛哺讣蹲伺凳效谭烦拌喊唯功</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+110                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

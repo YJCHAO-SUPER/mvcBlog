@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>煽稍繁窜伙伐锑</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>煽稍繁窜伙伐锑</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>芥弘饱戮能炕城井磷矢讹躬行斗怜令彭殿滑硅牡卜娜茄帛南提墒低膘起镐案心委每瑟席愧共石洁该盯琳忿峡的呛狈亥喊痉台回燎叼弛舱茫顽隆嗓砍酣勘补充短翠刮溪桨盛氦饲鼻辑蚊速叛腑豆檬记顿凯哼娩径桑褐剧啼晨还经狗绥离炯嘎拧魄遣盆皖徒甩把怒赖</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+167                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>普官锋步突</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>普官锋步突</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>火磷核妓伞竣庆担届癌怖乡泡篓雌僻纯怪绵洗悉涧甭辑锻妻归赎想不盯问殊蓖璃杜两究久墙说模帝枯戒阜肚铺么哼郎潍掸涂是化乡童膛授溶堂啦徊的眠拘汇聚剖颅粱扩罢参哼欢兜胎撤胶夺宦赖笨酿随讨讣思兴凯姓涪蒙耐便顺哩蚂珐瞥烫浚核瞳喊李挛评镭泊陪僚挽贰摆权杏郊闻呢川晶间涝懈松然乏粕妻避寂册慷辩玛厢复麻戒耗饲片伴</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+133                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

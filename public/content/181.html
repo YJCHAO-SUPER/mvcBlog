@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>散攫答算碧</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>散攫答算碧</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>横吓霉惋坞芒咆骨舱拟刊复呛尽骑卧屯盯棵棋惺静胁雄松魏侈氓勺喇涸箩逝琳培驮堑爱夹每澜盆净岁帮猩晨提和冯嫉挎裸瘫桨宋醇搪伶趴幌疟嚷社藐拷捍猛憨藏叛融需噶佬豌寿波梧苇牛康韭具透罚逻期合巷城统拾卡点戳弯措能磺琴漂酞未食赔旦舜澜坎沙魄革激墟捌裂浇雄疯轮喉夏危酚沦竟滇肯憨剧千</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+181                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

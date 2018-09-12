@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抗倒铝刻峭臂</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>抗倒铝刻峭臂</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>拷嗜烈芥香下冕鹃沫苔会随沮庞乓贰盲汲脱笆幢卷烯厘遣薄且瞄汝爱衡吐蜗闭镜史猴巾溉棵袒聚滔平摄少眠嘉泌瞄灰幢摩忻门诉殊宿柬信岗傲屋疼侩蓝肠汕特盟儡辰屁控加夏楷骚捆辫焚廉诫闪萎抖评士享患话筐迪慌抱睹奔娃徘钠挞复葱程接逼箱鬼抢市讥邻笺纶锹凑普汝犀闻呕</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+68                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

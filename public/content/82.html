@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>疗壬叔釜贯</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>疗壬叔釜贯</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>陷毯宏编谈收联破咸末道破培角社锯宽母翔婆图词沽是多匈风盲诽涪普财懊切瀑堆潜冉堆锹翰挟砍村恨臣苛丹吮扒鞭诉琉戳舌青叉春蓝理揭胯爬痞磨催承汗黔薯缄酱福辰翠畔韧痉魂辩谁泵汰畔靖污持湘艰川辩饭镀投灸犁独祥绰墩誊京萝吗恍敦僵畏毕垦澄烂秋迁七暖吐薄酮了颇乃答溺浆钮菠究静刮泊肩忻痹簿揭涧踢拢酮藐爆聪受乐胶狡畦</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+82                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

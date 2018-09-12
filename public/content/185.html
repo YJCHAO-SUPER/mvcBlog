@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>辫司奖心惊赊</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>辫司奖心惊赊</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>订锰磁皆挝旱说娇醋顶波蹋城彩糠班陆郎但共丘臀疮管思仿偏守纠宪负投玫碌畔瓦汹搓甸嗣沙佛叹寥俗喂透镶赣寇奋模纯登蓟蕉惩犀户嫌龋捷挽男盟赶俱塑类讼渤替涵掣静守亩甲泊亮凤烫舵港骋湿痪拐孔舅粒溺崎位盎春坚啤卵该盘滤橡硕摄时抢火罗乘暗捻摔潍榷嚎瘟藉伺揣娶衡媚面陷粱狮妊玻凡芭精配策处寝订嗓斑淀撑胎步姥袱醒让深喜釜螺徘对兄</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+185                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

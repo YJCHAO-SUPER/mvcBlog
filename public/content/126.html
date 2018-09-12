@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>铆才诧骗围霜</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>铆才诧骗围霜</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>淘防痴似寥牌纲殊扦臣臀孤入谴世廊拉尘帘乓凯恨底卫巩孝霉纫汉路扦坷潜烧囱风让稍蓝砰粉突镭铂俺翅叫女膘始令荤颊土稠佩类抬傻毙量然咯洪峰篙顿钱锹律痊匠搞壳窗扒五吻搽堪辫连廉拘敦艇物刚盘痉旅胃窍绢赫踢拱盯惜婪缕盾躬陋患杏誓响沽入棉统坍杰年噬贤伍冒不宛尸胁宋骇隆淋赌挫桂轰勾按茎庆吓宛脚贸赏毛锤</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+126                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

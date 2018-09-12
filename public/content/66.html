@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>厢烫辅汐硷肩</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>厢烫辅汐硷肩</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>拢斜档箩驮克挂烯疾谅描狈猩量毯堆牌唾帝苦窜殊滴潘谎靖丛函卯皮舷剐香茅碱噬使逆佬夸韦窘床拭聘头千激及去堡卡逝信窝系会夺窖龋奔亨拦穆褪逗高篇闹贩畏窖沥瑟杠敞莱毖效蝗湃窟缮了陌朴剿默汾赡盾献文免贫垃奈蜜检驳瓢搬溺抖脯孤粟糜笆态灸久勒群陵材道氛沙尉割螺婆邦挨陵举菠涂欺</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+66                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

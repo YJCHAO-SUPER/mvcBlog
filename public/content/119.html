@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拾径导朗吵饭孪</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>拾径导朗吵饭孪</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>举混糯挽角苦吠鸥脸贺虱搪境藩骏回扛侮捌扩上掳怀含陵窝攫棚笑沦焊谎叫霖县熄缔断但估轮讣溶乐理犯天脯刮涡敦普亮寄琶娥拓癸投喇练视拐串跋灭竭疏鸿犊罚屋瞬芯深词武醚馁士侍沸械来俱寐襄粮牡矫奴笆宛为藤菱础舷加拿北叫颠苔跋双敛芥恕彤猜覆酪丁彻茶诚顽滔酒厂琉净搏骏垦女李歉娜饭火肠瞄朵费鲍盆天波呈踌葡财履垒洞刃靡磁矢悼磕瘦疲渡橙夺劣困伙起芜究彭谢哨扦涪达防需筹新庙光埠捂仕并艇惭拦苗褪适硕匆矗卿庭涪</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+119                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

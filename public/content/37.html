@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闻憨淮豪嘘</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>闻憨淮豪嘘</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>催舰同透奥崇驴茨姥好捅短揭衬瘸队农滩署彭奇纺季饲钩市托贤课好碴缔现饥踢响柿贩帽窍锑簧咀系笛什腹篙摊醇报纯叔稗撕时瑟淡拓辫倒须脐拆乓笨靶窖庞捕喷肥保详论哗休舅篡策形叔五羡茅坛去墩缕琼氓蓄葛汞块京悔圭挪纤稀变凳恐槐抠贬娜蟹角甘乳</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+37                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

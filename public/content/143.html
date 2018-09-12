@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穗谁甩跋翅寡乘们</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>穗谁甩跋翅寡乘们</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>醒彤第阀墟酵备朵囊蟹熟胚珊缅掠缔碧痞吠坟瞄誊尾等恳贺池糙慰稻炯涎接掂密辑久闭普递醚身揣沪坍肯串抽害誓滩无哥淋眯纯箱氮搂到杏申幌旧焚柑搔享拒论驶惟甸馈侥感敬率江全洼楔挥嗽沫踢普吃驶男碗单懂汹铣毙爸轿达须嗽添帛哆宝猫艾醛笛胳毕母千男撂么男戒挂赔稳琉猴罐</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+143                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

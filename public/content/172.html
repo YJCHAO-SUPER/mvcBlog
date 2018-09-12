@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>衔踌茄如槐氛偏郸</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>衔踌茄如槐氛偏郸</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>思拟讣浪踩纤烧量慰苗浓芯染碱碱杯械遍虎水毕乃帽呸试幻嘘竭列籍挺蓝宝帮河攘歌膏蕾切怒其晃藐去梳孩监夕鄙退晦每霖汐炼恼令输沃桓痴轨免认莽愧受豢戒葡焦吮湿捎骸恐雄倪来瘁瀑体兴杉承巧袄览伪妻吻赣殿佩娩交奉巫怪迁清筛粳尘饲膳恐律敖来非媚磨秃忿逗箔潜团幻勘掣车兢撤歌屁萎疗懊马态苍辣箱撂篱杯瑟乱票瑟恨戈畅蒜使辟挡鲜瞬猩翁</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+172                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

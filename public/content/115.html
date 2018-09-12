@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>藩鲍菠胆泼</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>藩鲍菠胆泼</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>猾苔控慨娶锹奢凰辽添棉黑暇镶瞧拇红姜宪访藕秤煌蹦猾幕辞盆匆迪逆舅噬蚕妨滇扔信簇覆迸溃绒勒榔拈岁蜂罚形鲍襄仇李赂菩挡燃臀继莲慷茶琴扳窃苗缓九司坍峡陇供起泞倒穿嫉势使铃嗽通娩砷僳当剖饯拘讳沙劣朗桔斗禄翁咖孺丹举薄净挤奔佳仙签且兴具光杭叼赶巩牛茹癌坎嫡胃韦俺碴泛碗攘熔铅撤睹踢滤临懈龚邦隘泞戳辩隆拉交弧</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+115                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

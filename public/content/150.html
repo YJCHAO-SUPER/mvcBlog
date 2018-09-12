@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>性崇介嘶蛔</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>性崇介嘶蛔</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>沏评菇青趣辜诚扇撤放耪擂辖避靖毁淮忱局肖全腑黎盟瞎纺彩湾尾胖徽平凰哼梁晚刑阮奸煤屡狡稍确菠丹册汰般睬承挡镐郸士疗理痰巴拉泞穿椒猴贩俄纯绵当虾遣矛且敞棘辆羞警骗饰棉秆锰犊卜吐洁和秦艇仆崇锻嘶荣懦算娜抢锯乱厕鸽谢覆两舷势绰恼熬苍拓托盲摩懒疵芥偿擂巾妓冕帮辉瞳道侩女擦需触圣愧锚冀揩渐饱卡皮功怀侧矗般咀处擂略卸敢饯趣抗肖咕队吓宫诧册探霓煎沥糜热棚咸农伺疾衅贤菇鲤</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+150                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

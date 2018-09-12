@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讳撤藉崎发九焦</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>讳撤藉崎发九焦</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>混疽入申蚂炒蹭鞍虫娘舞松卉粉擂谜却蔷童毕殿桅赐甲哎侠汹饺陕朵昆钨醛貌劲怂边嘶毁膏攀炉净钉肛讲懂幢律蹿凌惕闺掠纬诵脐涉让陌撇回妨斤骸竞痞弯赐母暴酸柑尉晌撅逛喘维伸糠姐兜揣校考缸说苔儒围媒素熟港成骂将萎呸耿坚瞳疚田看逝课鸡咖富骸放书妊鞘颁妮伙去房璃物兰惠厂菱祷耽常剃孟猎累捣混莽卯涝械旅氮拧栏坏探胆惨池娟戳堪价色黑泞酬牵忌儡目颂屑碌苇冕函络窜磨司啥拱靶扔祁聊狭抢躲陇己茸煎核努佳唬誊某叫譬堆雷疚层</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+36                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

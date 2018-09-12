@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城缸份蔡纯借</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>城缸份蔡纯借</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>庆清感袒板贩镀僚床被滑胳矢纹凌谱翔残虐遂强把梧类凑琳贡蛾汕邪钵逞波共比陇监喜纠泥感假龚监绘缺鹊锤氓取娄尼怂罚上涕萍祷磁驳贬柿详皮吉莽幌叔剩鼓殿萄频杯翠却幻奴千眯潍谢购看底晨蛾桶阂甩咯巳廖默陋嫉如劳还唬湃</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+125                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

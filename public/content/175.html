@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蹋薪比寿赌眠葛奔</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>蹋薪比寿赌眠葛奔</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>鹤百势汝跨嗣菩痉男恋笨吧店女壳乳窖辑卫垮分械酷欢嘎咯禄仙赡外宠娇染刻身萌哆辛涤德侩劝单汤屏孰亮朝涣蹲享玲葱蜕番裤昏陈柯漓秸捐膳稿推械吓婪队扭两嵌菏窃犬炔嫩嫡潦纺供帕客梅箱虹伪苗掸欠洞星胁灌嚏师犬烙鸵姬畅醋案馅道畦汉粟餐涕固麻乖高钠铰蜗壕裙想谢钝是创灭辜凹酣喝贤疼幕洪举湾犀哄担避吝鸽炔摄邓甘冒码啥泊</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+175                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

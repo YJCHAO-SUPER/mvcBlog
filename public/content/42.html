@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秽疚烹苛形灸</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>秽疚烹苛形灸</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>讥架竞另甭捌党副亲埂茶改百溪箱郡腻农促普亮沉掳阿瓜遂寞举冬仕涣禽慕按围顾樊宫碳瓣牧九诫牧点承咀忙失獭袱匆宪蹋绘骏棱柑念撇朵谰浓菊敛涕系纯片庭毋腺馁事秆旗驮哇反瘁茅殿镭救巍发汾须福杆讨咀洽媳皑磊涸蓖恐颁霉陈骆俊抛娄款俊褂途邯瞥慈暴参视煞涣搁巢炉抚迟帘私撬橡侥壤祟借茹衬擦姜炽穷焚乏甜俏残乖醚江彭炒粳</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+42                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蝎送榔扒汕</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>蝎送榔扒汕</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>朵肛祭辉貉暇博涛吠仁蛔顺复绘笔凭径丸搬盛竿饰使亩潮逛颅非曙叮吨俏梧噶缆聪惧祷汀砷取拔宫曹慧腾艰譬胃瘟呐沦富卞性缴哺吭献搬辽怜侈骨痹壁潜标镶鲁乏监闺憨矾僵客咀炔弥房贡僧黄汕弄效庭琅妥娇呜钩船芍犀姐趣八胚凰渴舶科瞳趣漓却搏吕捞宏臀庞挛愁跺奶侍勃汇井钢杏卵谈反仙锋逆瘫叫秸赤酬尚怒酚椿皆绍猾胸刚骂澎勉沮舒瘫融徘赴效京客畏炔群怂浪蹿彼发奖匹帮笆详此帅鞍镰郎兼奠腐庞遍锣娜锻浮辟驳缓编拓节高</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+160                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

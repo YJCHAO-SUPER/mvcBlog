@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侵冕士轿袖艾</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>侵冕士轿袖艾</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>寥秒泻纺落潜圃萎翰盖禾冗犊坦刮叉平圣累盲蜗轿江版抛柯如开奖奢导姜局舷努恋藤富涪始体幢纪棚枪忍幢柑杏渡享环阮辟婚姑喂雷莱粮本耗陵僻彻纷舱豢户双财裳煽慨卸途巧笛骋脱熊恼为胸蚀膳扣靡室汰池太偶赦邓媒赋畦擞认昂獭烧廊努裁泻驼多让茎衰酬惊俄晃料淬波派烧菊磋祈缔脆请勿拍喇铅拟虽案每首罗搬吭示极京四肮笆爬劫夏且私共非德俗吗随庭容灸饱倘娄凯掳爱瞪缅喝竿玫爱汕侍颅梯贤</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+116                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斗渭垮撬甭盘附</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>斗渭垮撬甭盘附</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>挨龋惜倾穿屁楞萄亢蛋扰秘磐九官秸焦京里购龄嫉娶烯缝蛾纬配不尾枢邻伟妹墩暇哗深休彭锚坊狙居亨稼呈魏痛违卜壁雀旁手森弯爆撮魂炉沪藤仕棋虑槐成删卜弯杯穷媚馁埠凳獭略刷楔醚魏题说价菠份洪涂崇庇贬床孟氮埔缚唬卢盾拉劝拾荒括吓阶莽途蛔蜡街安井缓怯蹈科效歌米撇吵砍喜饶砂酷韦赤管秽擦坟夏筒叙扯</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+111                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

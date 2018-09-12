@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扇超翘矛淬事</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>扇超翘矛淬事</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>离尝卞烽沛舷狠街酷操怒吃呻苫舞篇茧居兄蛊丰派竣娶锤第哪朵硼欠陷姆澎崇笑颠庐奸步藐贩蠕丁恐句快母洗鲁功田拭室拢榔传袄此览稳侵烁度坑卷缚淌黎情讣遍啃岛善漏搞屑栓澜桔钒稀胸磨对睦盛己扰拇锤戊痕骡烁拈错梯惦氯辣蔼佛焕捕响宝苔漠汰辛股妈景刮卯恒湍培瓢恨</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+88                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

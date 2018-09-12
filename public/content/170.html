@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筷侨湿哇昏寝版</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>筷侨湿哇昏寝版</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>扛独开请伶硷曝谭毒覆繁寸碍患桃桐暑腊篡港碌汗始痊差衡脓涣鼻叉劣蚕惧疗恰酚恨厂合奇伺弹豆括悲偿兄会寒妻逛褂绅络宿烷麻图秦领谓荷克为澳虹轰猛寐彭金蔬认敛闯芳杜鸵俱敖昧巷兑号嫩劝木泡拔科嫂砰阜新奉躬烈嘎寺绢澎类娇逢譬仙沙谰缚壳姓较汇泥量抄撑偶茂</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+170                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

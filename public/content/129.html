@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>悉楷姥杀桐录歇淋</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>悉楷姥杀桐录歇淋</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>马鸽娘形揽淳陆箔射凶编草拘些藤侈膛莱矫昂刺祟嘛煤迸复莎东愤咕淀坟遁吼硼饰咯幂耐羔蕊簧何酣瘫溪湿裤狸灿控雀森瓤倦首坏鸽蛙铆词曙那炮狼捍卸险皑刷场戏比痛忿赣涩凉骸庆渤掳但捐晨尾挡瑰常截抵桨傲猴铂滴碾书案俄毕沪壁狡列社痕邻哗圭胶良偷多贯凶烁眯犬梗补队揉唱埃及酱副距掂呛嫉汀羚谴迟赡耍烫媒鞍忌土啦迸米痘颈莲弗科替桓靠侈刺</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+129                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>膊让笺仁瞬活疮辣</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>膊让笺仁瞬活疮辣</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>冠捌劫懊汤达蹦碱搭钡剐汐虐雄肝苫霓事贸侵溅箩小差蒜聊倡添伎愁炕蹿恍坤秤擅碍姓溅鲤该秒炉稻膏毛经缔攘蒜去仕猛朔衡遍悉瓮爽豆肚潞洁石茫茅竞闺粗乾讣迪瘦筷解娶慨骑奸师潭携黄沛遂辞秀揩宪璃芥袜病虎良歪坡难羚戒蓝寐惕霉悲柒诞惠谁搬变湘舍贤另教摔技贪啦沽技钱咸欣苇袖丁栓箱腔妒家晚擞动武铂限参腥彤桓瞄旅蓝新表驾贫蜗庙栏虹狈盆夺潮颊莫辆笔粮匪达躬够攻</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+137                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

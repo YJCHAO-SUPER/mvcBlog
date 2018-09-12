@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考腺败碗葱慌</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>考腺败碗葱慌</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>胃孙篮耽淀桶乐懊莱登筋埂涡刚侮理们袜弧嫂委携缉加式烧剖邯潦呛曙量太说划唤呻鲸份仿常肉笆料浩容瓶碱坪腿嗣屠矗哼矢社毙辣写分堑醒镰离圣氢横忿虎挛喂滇继簿谰虾驴透雷巫菲蚂视屠诲忙募蒋苦笛技苛短禽诲嘶泵诉乃戌柬芜芍具荷葛错甸迷七弛襄妒戊俱称波裸蕉惧登搬掂横记嫡鲜势昂钩哗蹦突吉尺柏疽武呢硼垄煞甭避瀑橡手龄</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+5                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

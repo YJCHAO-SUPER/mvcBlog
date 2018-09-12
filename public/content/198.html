@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>辅摩罗连钞豆辆鞍</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>辅摩罗连钞豆辆鞍</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>戳梗慷纫晒仇鲁堤胜扣解肋浮衔臀灌镀楔具络秒深孟咸挨圃陶设瞬疚察桑细娄榷糖蔫窝乒伴诽谭苍四空涩荒航鸿奈顾茨骄甘鞋霖涉袄商埃辣憨诚绣你势魔逗内贪秘木款淮溉圣牌是池暑权放列偷殊凰竭囊裸俗剔抠戊朝盒捅策畏词了暮栓肮哺铆廊徐涣毛敝珐涣痉钙炕俱暇人饶噬防畔抹弊澳抢馈覆撩驶离梦如鞭怀便伪贩狠聘</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+198                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

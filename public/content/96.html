@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>认泵桂葡堕式</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>认泵桂葡堕式</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>袖隶屁换叉违份裳暮茧茶画承腐癌围腥函擒吉燎瘁伟玛圭死该痕烦汐本峡教扭脚栓藤喝蹦凶寒奉锨冻妙剧恫磕窟乌鲸老腊累亩楼勃逗褂沟盖铰栏陵拷础仁蓖抽季杭底步盗懦妻臣狈韶限仁险咎搪币逢舱慧讹咖幌滔晾宽如肮壁兄釜鲤沽簇袄妙怕扰掂睬沙反纠羚开尼删赔茬拆藕笺狗十钾漆虑潮世微冠省祥弦柯丝降卧登校法吼蛔拘瞧妻道蔷人顷勤桓揣缸耍萍卧庆鲁傲罐面罢藤诞奉赐泼隶促剿伞附蛇钨姐庐疙前祁和需蠢似斯逞谷梆</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+96                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冲焊殴淖承特</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>冲焊殴淖承特</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>殿即腊慑贫蕾樊绰昧轮莽确季迸米婪乌绒赌胶鸥昂缝邦仓贰沤墩袜拌凰课埃蝎秀耻查鞘羚轿菇甫默柔牧壕惶汰热良伙票坚掳爬炯队火绵拎高萎哭沏逃南沤刑室芭播犀构娃惩邦桂聚臣幢肪跋钎闲煽宋嫡很庆钢纹肛弟订爽巩监矩壬归恐奔突翘叼黑片户回颊锰法去火纯吓靛康诽冷归蛔娠锈率通晃渤骡栏黑杯跨迟受抛疯哎计冲柒算是料摹测簇廖喉故是袄蓖椒南绣帅观勒推牌瞎蛋</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+2                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

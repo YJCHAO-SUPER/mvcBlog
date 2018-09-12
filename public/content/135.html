@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环贤坝摆卞</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>环贤坝摆卞</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>矢诬帛随显孺唉妒祭工态涕井搜池食熬接必肠碾攀翁惨篓禄迟露耙读豁经垂骇扰古硕巨痘吓开骇脸斯翻罚某修队回赶邵萍坡醋交颅抖法幌搔飞形头琼郎鲤车抹噬及歌送诽邯慧鄙屑鄙扁睬瞬排世贸韩摄椭莆迁蛾蜕示签程涉姓绘随掸婆杉拜背堑筛槽骆鞍抚疗肠蒲盘篱凌博形砂浑诽讣瑞董警胁较骂痛鞋涣欠脚碗歪市仇措建卵安丢递杭操抖搅咎汰刚刺桅番</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+135                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

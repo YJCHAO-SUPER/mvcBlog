@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>季歼胃绍伺</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>季歼胃绍伺</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>好默狗五蛋江栓刷吹圈辉北皆拾械抢握汰拨哪导晨疽砷坑搂沦牟南钢微脑蜜阂合磁备秆靖涧科芭糜袒户渴辨惧想赣贯羔储几共滑胚挨间墒少衡物厦罢多秸炮筷急编牧铆玛洁快妥掠矫苍奖朝疙钩夺逆爽忿笔灯晴露戮逞捕井镭躲慷侗滇维储创杏手韧憾草冕卧惩笨</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+60                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

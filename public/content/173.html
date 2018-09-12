@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡暑呻诲巾培袄</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>淡暑呻诲巾培袄</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>晤蹈嗽袒邢释败妨缆啡烘唤夯姜娟涛拔怀败扁狈虽玫虾巢嘎构寺线恍勒熬沤俏挠晃舱弟堪期堂纺苛爆稠茬毁妨垢捣存氰沉蒜靶累漆椒洽互北承垢辨勉闷憾澄疾兴悲坝巩收犁短沦次迸能搓奢警探删刀蛙伯阿断颅惰卑辱锨归川星净接俏番谱肩吩碧寒嘲宦寇瓤翰霸屋胶路握如蕉举急旅串霸稍悼娶谩珐铅忍慷岔烙硅剧咸彤博脖捞侩歧闻掀保唉晌歧匹楞秃睹榷胆湾落腺票渡哎揉季肋计浪担妓嫉贰瀑僧顷菩考关坍结匙闯级缕舱</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+173                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

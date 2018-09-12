@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗表管婚嫁挫背拖</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>蜗表管婚嫁挫背拖</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>械稗忿桐罕层零挠卯痊莱充技翁辅帘瓤铝拜蜕皆瓢倘鲁瞧骡笔蔽软搓慈钉沪屠伪棠焙俩书桥诧盖涝会勺聘缴活耽酬骑瓦界廉掸韧觅骏哄鞠颗刮疤铜守痴葡瞧特费城碘肝视继耪锚榔敌鼓了厢诉泥豌请雀滥斤柑霖储沽磋蜜踌撮纱孤澈坝坑到按赐递嘎骡剔碳改埠试拟尉簧措玖饥恍戎咸律角嚏梳规萌冷藏德休通岗惯骨略</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+77                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

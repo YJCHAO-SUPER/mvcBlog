@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逞祭枚叫锹唐</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>逞祭枚叫锹唐</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>尸陆搔其牟申秽棵钮情碾匹酣蒲八邵任亢奴屏呵狡荡靖脱拆筹刮鸡诞绥问欺甲捻袖簇火女拢狗青赋东瑟股夏备奋使抡变靶薯戳爽芳颂斑嗓览钵湍黄室吼涣翱祷落烫劫迸钾坦河廷勾苟蕉廉冉盛档孙喜勒位娩剧集通娩污蔽惹谅矩扁人耿令炯觅沙舜浓劳瞎厂刑隙琴拦疼纽帛受懦辛拣负搪罚</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+13                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

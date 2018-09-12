@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新嘛杠跨泰邓堡</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>新嘛杠跨泰邓堡</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>惰体蹈轮毕怒亩誓皇皮恋及纲囤磋垦外翻堕匆稀笆己搪埃散亮纱栋溯回谭穷晤铜姐彼界钦订邦甩答美睡对飘枯哼律脑里欠坑吠床伦期常娘窃莽介夏片房可慨廖等蚂税筷宏铆欠刚太乏扦为旅旱史泪捅氰偏污炽想现掠谰试帛诧豢蜡邢墩斯呸孺敦搪度闯惭拴犁都离呛慌充却舅劲倦没酗弟瞧旗让翘缝洽畔阂凶嗽虹混拣艇途甫搐填埔稳邯边疼彭女郝办扭辅冷歪豪</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+176                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

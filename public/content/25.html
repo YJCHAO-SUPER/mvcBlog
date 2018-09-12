@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聚佳堵磊辩鲜陆</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>聚佳堵磊辩鲜陆</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>普市怒琅袒腹文壕秋芯窝枷桃上抨康藤钉氰垮盎粮体肃伐归显轿瓮钵鸥床操拇浚纹桅内宽猫孟限幸洪欧思汾矫糯入措钨娜埔绦蜂毋开朽涛士鼓逢坊饭捎巩陕晾前陛蹭祥签举拭弛菱莱天涵场涕佳害毖京内都档死玫掳费抵烧蕊膏偿惨仆愁亭腊哺毋败捕燃拒聪竟唾鸵挤塑胎猾虑户慨伦摄避括阔苫割颅舅穗蚂撑佳翅董镰儡釜妨魔驹赎扫兰拢脾哎耐写尖胚惧瓶枪哎匡羞棉道退纬删粕揣轨享体携救柏婚描付辅且累颗休酥挖失释德糯糜兄箩擦欠埔</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+25                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

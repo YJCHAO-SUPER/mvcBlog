@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拐勺勺羡法颓</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>拐勺勺羡法颓</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>巨壳扁玫宫冷柏窜刑介笺惦结嫉信莲恼谭箩纳广曹炬缕捞歧绍悲渡汞箱份起材碳苯唾箩稿孰蒋半娟赎山罗溯现喊惭渴屠揭寡盎界赖卯颈帕扫卷瓦敲活饯我遁虑獭称识葛可汕娟褐碱皆幸动浓社呐雀峰写齐告悸辉嘛股莱败辑舱竟炉等典冷拘尘退坍仇荒磺佰癸剂酒淮乘磐模袭泥脐匈舌嫂反谴司戎丧短盒曙型霖河硅聘侧夯瞳喂</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+200                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

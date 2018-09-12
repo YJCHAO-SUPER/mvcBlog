@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>恕哗岸级库</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>恕哗岸级库</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>棺谱晶砷揩邢虽捞慨村潘勘拷嫌催桶仇摆钒卡宋峡缴沸妓扩扳耍榔前膳空广挪盆绦杯呻牡钉漂刻膛屋投田牧九夕菊邓呛泵仙蝎庐弯烤熔林磷娘酚借皋眠心鬼识叹庞巳屠磁抨食科黔逛栏芬忙按懦的墙渴巳茸仿退沫勿级崔拍顶胶扫绅去稗褪挥恭阔诚适容茧卵溯鞠骂捐猾己猩莎烹悲敌的窘次玩鲜伺紊泻赣力澎泻</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+97                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

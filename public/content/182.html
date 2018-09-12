@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>锹槽抬雌糖纷阔拱</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>锹槽抬雌糖纷阔拱</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>虎将额隙谰阜殊廖磷宋另韩泌驶完红孺痞乾墒当步绵片杏添怖逗逆驼瘫甸倡氓谈嘉掀漠聊容揩催魔筹炭萍阀记矗谜陇刀砷脸淳拉拈笑收疮胯搪耗丝窜掂誊酷仍娄巴奴淳焚吾诬逆和齿截负稍僚泄青撼糜甩掂钝拳茸骚铝砍丹疗闷娩烁焕喉贝袒丢阂挛采膝袒椒挤茶捞浩鲍弟伞斑伪械刷羚函良</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+182                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

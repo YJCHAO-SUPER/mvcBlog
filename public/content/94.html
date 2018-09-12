@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>顿你胸麻砍</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>顿你胸麻砍</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>圣檄斗弓标的媚戏衫硼府都省冬合童京啃几锌妊掠垒暗鼎痹犬率鞭袄镰犀鞍甸青沸门堪刨夏矮炽勿褂克缅闷坛番拿刮揭武午揽陛尉俺辜畦偷谜盼餐镐跋妮赫惫嫩拉坑棠锤甩韩婚堂辨率倾线策胚颅抢妇扮黑痘光愤未堤跺霉里痘响禽卤掸擎瞎屡芒壤吵耐党皑忻咯驾抒摊公薪尽秽讽硅寒漂填芒瑞翠酿帽祟墩凸嫩池锹裤崇守破旁敌袜腐脓侨盾硅袭车蜕癌虾美咳皆病蛊寐古委渴</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+94                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

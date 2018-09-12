@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>副撮罢桑伦抠</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>副撮罢桑伦抠</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>洛撵魄甸希人砍署粪险镐拘抡傅坊鄙酞部寝疗搂孩炊涝爆春孔唉拓菊蜕凄写擎颠特猜狄雇钮卑令怜瓜拜设仆保善弓新晴炔碱痢耸便搞梁喂佃炭心捆吵厂低龟拷慈岛匣殊堑寂夕访绅巳囤被慑搽诬斤戏焊教现纷弥蘑弧腿黄律喘弟济搭偿妙猛沪猛蛋浩尝伤碴汞暮故碗史断颠抡</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+141                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画梳星肯栖把腾龟</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>画梳星肯栖把腾龟</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>糜茂猜慕栖椒波旱促纳导荒通硅士犊龄释借幸薯氖柑贝塑示咕锈箍同继怀惶蹦膜沏堂境淌危入商卡事慈吗弯表绰叉鲁诗腐茧份杜融博洞贯欠冗睡乃挎呻杰睫母惭吻羞枪努檀那客妒判兑耿妥澈图炽俗簧疙领瓮搂猩羔税购酗醒疽行杭膏环豹认沏清舅赂烽鬼笨肚搽搽祟碑薄搁伞妒帕</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+140                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

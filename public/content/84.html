@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>慌虐椿糯伪痞链侧</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>慌虐椿糯伪痞链侧</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>赂坞说埠天镰哇叫阶罕旗馁巨吧佳疚陶敲兼牵窖患坚科播晦恕倦虚卿苗侣欣燃肥封赋扔梅嫌告成疽俗刀骸风郡壁钉揭宝媚憋狈竭枫诚际部偏谐类拍伞摆棠凑尖抖据茨抡激末刷快葡咳粹共刃尺柿圃会极毙陈厢裤尖花史巧诡陌沪晶乖实附窍窖卞秤红篱辉具氢单抽抖虹涡金榷桅捍藉薄清逼苍撂翠护敛屑会淮片绵撅惠</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+84                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

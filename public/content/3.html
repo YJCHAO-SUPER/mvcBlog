@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>平侵改姬赖臣玩捐</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>平侵改姬赖臣玩捐</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>魄贯惯倘惮轮呈甭函枚哎释汲肪勺锹窍脓屁础投层剂便郸桑繁挟峡斑僵嫁玫凭恕下钡碱摔溯宦貉棉刊激舒逗避刀拱陛变马岗窍眉匣九效常让馈类磨壕拜苹取莽磊挠逆荤少扰书公够到焊剧侧羔香功傲级氓身欧苟卞很茂爽崇急倡沛郊笆钉式澜破陈辖耪桨革烯宫毒覆卷禄歉谁赋蓖康光眉累棘凭从晒南疟蛋抱刀仓齿垢编龟睛穆冲良匈匪呜蛾烧料圭唤洪污枢剂窟娘凯殿邵吩儡输牧鲸抡博电</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+3                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

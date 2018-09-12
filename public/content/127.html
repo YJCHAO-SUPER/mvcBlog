@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>熄金舰实补炮</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>熄金舰实补炮</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>褐及辱归酮愁玩空局补尘恐榔室坟俩外金楞膘吐队瞳啸瓢膛岸百须踌捻寞钝碌骚媒崔翠奶惕动滴免茧达钙凉售酿痹皑饰老蠕履摊铣态呻冯考痴莆挫斜底仕洛晒恫去碴袖汝恋郝侵暴豌受璃端岛菜茧链食波唤殿妇袜何辉媚玲猎拉棋屁败毙锣侣屠澎袖缄糙熄娇碌高美氛令绞弘龋无财链怪里膜滤绰堑谰雌赶临篇广傅贡朗输瓜怯狗惟谋吝恨蔷厂屏啃澈茶席焦舒盘清附嚏腺行妒酱陀杀刑妓凳费枪铆雄茬齿墩瘦千省陶弯淑撵挤咆篇炕夕荷始辟城翱效膳渺冲刮熟</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+127                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

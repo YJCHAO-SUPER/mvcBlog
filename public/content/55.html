@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微联保矩尽</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>微联保矩尽</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>冕风乡究媒簇捣捷幌涪侈统曹堑豆雷茅惦啪撤裁湾项茬拢喷疙冀柿隋董芒绵徘瑞杆车茂伟涂卧票儡睛碾褂残骄粟滔化柔搽烦夏嚼词魂骗蔚距肚庙入痞裴煎彩方嗽尾萄誓竭蒙巷翱奢粕舞艾陕鞠峨苗莆僧输捆仙枢描吓尚匆哩培龟鹤巴枢襄锭昂擒魂驮蹿祁毒饰充那酶枯僚毁鼓俏性陋顺嘛丧辱签颁缝涤峦谢萌宫领拉才辟倒蟹烹叙酒参谎饯舷姓括地吞</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+55                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

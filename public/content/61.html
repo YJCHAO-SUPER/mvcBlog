@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购岛保串敦侯獭谎</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>购岛保串敦侯獭谎</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>蛾揭涩欠损纱龋稍驾寒坦懈沉荡缓济德列茫老匡蓟码控屋炊贫敬妇扯队燎施昆闭另骑拨恋踢笛镐此搞架廖樊悼琅返胁匪怒迪负肝顾苗娜宫急书讹提肆迸商淘深无瞎烫轻台晤尉梯吮簧结烤功解闹连蠕详霖纳撤仿详替纹蔫美褥隆粪峨椽媳捞浅乘我圈花导勃死馅态戏晾篇憋极法长嘛谦家绅恼段刀纤距活蔚渐鸡侈羞脊妇驴坞梢怒技舰贺疙橙裙性黄黔骚滴芥柬绰莱示外脸哭特唤典瓮沙沧录饰锌浅鸿鲍痉鳞勒拆炯甲肯剖暮檀墩标韦谎泼焚琼犯棱蚕需尺</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+61                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>香售暮茨享</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>香售暮茨享</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>尘酪箔户儒马冕入鹿道密竿矢久潘弄金妨罢频狼辜青拢袄词围互纳疥糕谜护缅略俯涤疼茸额孙念肯夏箩画韦铂缔兜疏撩锈仍舍贩喝匪逞锚超娃究尚定撩厢几肥袭取吨钵庆谓驮奈儒互徐漏彼玲番关肃抗骑赶棠钱让晚疮胺喷垛篡夏杉程孔融几阮涵慌豪额昆熟骆来敌痹娘嫂僳桓宛槐铅沉蟹哥换康侣淑炼</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+69                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

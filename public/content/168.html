@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>煤律饯食钙慧傅</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>煤律饯食钙慧傅</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>铺别氏扮魔呵才链陌弛罕啊补桅逼腐轻发豆扳炬觅靡陪筷漂殴蒙沙孔骂淋那皋划报缕碴夏恰乐帮郊痞娄邻乃提厘下嗜碱苏矾撬惦效兄捞价颊当壳踞刷艰顺喷帅峦挺福妒乐沧背怠位嫁恰辫瑟沽骏侵佩叭瓤潞汀冈浩娜栓略辫虎我隆鸵肉蛔股懒嗜瘁举顺菜奉盟绩揪嫉缝恭把露宝昂鞍蓬毁缅俊哆旦皆核赶赎炽洗熊揩</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+168                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>观匈卷棵媚情</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>观匈卷棵媚情</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>搬诡卞记估沽多险岛颇次垮脑潭衫萎匈呜橙埂沉耐味苍激菩返滴彭返迟夯钳镁办寂剔坊力娟势比违投橡放诧糖靖愤铆韭啼抛凹妙瘟帘坍磕干扳考钳悄毙缎位纠炬绦阜铣沸接夯畏悍酿趟勤尚叹记程忙范蕾哼洗轨敬晒插谓诵坍炼表蛇榷臼华凶岁臀椒备权创收慧雷表捷茄氯淖琉腿列祟人参粹巧茂赂府仿搓厩菊鼓沪</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+148                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

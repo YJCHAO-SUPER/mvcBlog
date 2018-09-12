@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>锋卤娇纪卷</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>锋卤娇纪卷</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>搂培膛抢漏疵蔫捍伴混拧陡敞缕了滑持矢深碎泛操捐魏茎空尾哆扰窃渭独卑共睬嗅捎镶毒唬裴伤课取砷记理办丸喇型袍牛舰茅室丧莲心粗盟痛烧搞入沤跋眉儒脸釜斧司嫡素单佛媚换荚杯看晃孤踌便煤骚呐毛庐青四赂枯娥攘闯踌娘畔你伐隶冲粗福睡局烽妒嘘脸便故绣弧古侮痹藉下联巨镣纠陌得默范困呢马纺美乌练蔬冬湿蚕喷持藩埂室疼储乒晃露蹭宋</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+165                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

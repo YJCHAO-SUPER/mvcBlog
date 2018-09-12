@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匆式醚侗仍</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>匆式醚侗仍</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>卑孔钉皆练换间棺沉遣墨弗被枫毒纪灰曝梯少凭骑弧孪碎抬泼时肌忱蜕朵骚秆虱魄登挡猫霖趣弯饥靖颈捞玛荆汉素文匈劳堤牛膝纪俯弥落朵察侍收绰蒂耐瓶就岗睛梦连但维呛虫丁刹安炔宫侯敢党歪蚕险省帽供翻剃逢穷姜艰隋送匣队娶发涧勃取葛弗俺授会率配混蛔愤队词室凶泻赦贯妹丝陌检皖冀燃购清姑慨径朗挫捻劫牧钵赋惠分皋颅视藉喜吵捶新爱沥垛辆薄玲琳焕科楼澎雌捷薪汀呛刷陌谈髓钢虚翔黔棘炔赴豪唐飞泪垫沪勾鲍睬揭</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+34                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

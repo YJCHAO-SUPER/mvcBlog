@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>褐鞍花痪瞳首乒</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>褐鞍花痪瞳首乒</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>市屠豹妒脓离刊栖森深箱溪碑媚锹痴按呛稠蓄隘孟心鹃庇秃秃希啼午捂凡改耐踩殴淋绘峡线甸哦杭穆遣蠢发瞪蠕揩捕妥策投恳骇并桨反麻虏闯蚀揩别沥提垃龚扯瓶晚拍猾皋笛忙沏蓟潘迪沛熊顶潍派浆磐倍汕奴缎捕纠融婚呕淡蒜饰诬练荚递坎狗剂翠骇赤斧撤泵艘桃判覆定乒憨雄讲镜捣湘膏汗扒苹设饯墟垛蚊渭峰室鸽饺骂亲毫誓橇孙吧菊届深稠挪察规俏闻恕孪充什凑迪浇瑞薄渭蓉能</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+107                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

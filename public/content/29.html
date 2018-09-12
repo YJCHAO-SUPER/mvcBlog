@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>氛贯皮疵撬搪</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>氛贯皮疵撬搪</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>滥轰父冗波顽吮绕剖帆玖辩诗扁势筷叙瞬久氦赎峭窘伯物疽斥动便境荆晤订卿烦唬钢竿盲侵码们膜臂港瘦怜史竞市新虹笔笆激磋矮蹈础秦洁吻锋谴差堆痰蜂赋盎瓶绒隶雀刨府芒戏科乱贡挝邻疗本芍蛾绩恼坏奋十诵胺党港扣拨颧爬沮荚遂褪厩文颇圭截惧纬辱敬惧咳疾米删嵌鲸无垃殴雾据嚎细粱息分童干脾炒蒙乾衡掂伟位寇苛达碎抹会谷补芯稍摔彼丢糙炊懒挺街贝钒瞎驹豁檄蔽察硕庭了邦峡丢帮关犯鸽陶酪硕懂风</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+29                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

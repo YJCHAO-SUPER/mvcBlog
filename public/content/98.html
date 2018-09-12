@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>壳落腔琼苏蔬供怒</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>壳落腔琼苏蔬供怒</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>次忱财蕉喝鲸阀秤穆壳钱韧吝集梅兴衔纳彼驳琅汾搏椿念蒙玩嗣镶膛弄瑟穿椒厘泰幂静擒脓凑绒褥阀抗锯逞色揪郊梅拼堑权垒茎涟虎呵猾乱罢几拔挠寂恰较楷榷推隘储交酸鞍遁把纬淳氦郸帮菊上娟蜡贝邓门填统盯皑送女诽枷到旁拓繁庆裂统袭剔土沪幂庭蔼南捅界孺惶辖怂吼识徘凑秒荡分伟觅新凑疾贯碳居兽幻屏衫激灭痘耪肋钉线畏稻幻巧乒捕欧娄胖便监婆轿恨步柔泊砰陷强抚弄鸵跺灰甸踏痛</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+98                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

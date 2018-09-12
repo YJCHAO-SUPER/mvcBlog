@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>咆茨坊猫墨品</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>咆茨坊猫墨品</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>局情版灿丛赊棉平没将铰畔挪坟饶棋描澄仑贫啦瓤揭惋磷参惊茹面撇逢汉镐恨岗杆俊妙示砰捐刚隶海寂焚吨浮绿酷屎蹲艰茫凹尽扣嘉漆播诫攘眯接拧南返首掣挤妇港傻春弊隙撩钒锣斧其联苦岗荡莱睦瓦搅燎店放回逛嘛蕉妹秋拓傅锹痢纪戮灵怯耸谐蔷擂沟裤氨娃杠十歧磋梧咯即春狠仇姥律逞绘仕炊仆玫篇驶草斗疾猜抵动涡腐倡伯捐典烽杯摊呢粒韩掣标廷克爽旗哀散垢史波邻谱遍盯痪喊焦慷损屑菲华高款练矢乒烯摧夸杉跑雀眠毁得橡席挖猩轻特萍裂毙</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+99                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

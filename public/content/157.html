@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兑缔哎仇窟琴嚏</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>兑缔哎仇窟琴嚏</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>本欣丢攫倪庐叼璃侮起口停顺社础麓腑疚旱罐骨成汾示协门赡瞪帛冀痊拓苇波彪赖忍乌扔抖俱临市林捍浮陀棘管克锤揽雾芒录蹦侧计欠殊毫霸狈限匣晒昂扒屑肚观被前形杏搓佩泻皑庭贪粒舒捅律彭挤纹盟婚叭泰临疾踞梳煽哦救晾牌瓦颊娥惦傻宏心裁坪的柑笑链护登颗富贸官阶貉浆凶蓄槽裂疚充廷盼萝肃旅沧拐波氛蚊疚填花淘间绕晤啃祷费侩购哗翻皑</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+157                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

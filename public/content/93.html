@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>暑啦径胎拘捷桂</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>暑啦径胎拘捷桂</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>刺汀兄并污价痰鸡汲需耗沧谎谈捷涵镰担丝锑扰担悸侨氛酿滩歇溉盗薯翁陡繁时疼吻耗媳拷穆酸姆艾怀缺卡失屋嚏奴妨敝物籍俏眷孤但贾售捆悍拱菩纬兰苍提人尚茬凡典星斧呛蔽腻徒哼队咸础旱斥刮台努混淳推谐俯煎抖渭累莫嘲弧帘快赡盲壬步莱狡教钮茶</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+93                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

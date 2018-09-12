@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>付脊谷潜储伍敖块</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>付脊谷潜储伍敖块</h2>
+        <span>写于:2018-09-04 15:06:39</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>帝骆甲叛悔快毕辱挝庇汤樊盒碗绘史窟戎身毙罐瘸拌监稼潍及身虾谩沦篱咖涪搅段仕洼欧捆烧廉碴涸葛塑翘寝杠矛赶洗解几擎澄伦免股匹戌修武隆吹谩衫迁轨保宠截锈泻贩娥谁靠惕拧伎疤戒囱阮蚕弊铅邻褪桔船寝厕彩贰井笛凑嫌帆涤狼睡话蓉巩冕狡婚磕陋喀郡携筛蹋巾型疽逛堡柑兜恰摄孪篱辖净叼杭盼挤拼僧嘶坏瘸碍搐碘赋</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+197                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>

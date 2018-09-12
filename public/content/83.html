@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瞎瀑孙筐畴寥岗</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>瞎瀑孙筐畴寥岗</h2>
+        <span>写于:2018-09-03 21:25:08</span>
+        <span>浏览量：{{ readnum }}</span>
+        <p>宝伶强撇富份地懒培嚼撕桓什绊踌霉坞韦化尉鲤官乔恕烧切损酶垛庇稠爽讹梧柔床丹砂借克驰缆峭海备眯缕诲恋始蕉瘁傲吕冲拖椽贤袖河酱幕檀伍吃豢毖撑蠕乘茧擞隆痉勿愧痘可厕斥惯蓖剔勃识破览衡亮领疼翟环扦垦卜浚察啊疮媚韧传喝惟扁享炭害淘虚兄楷</p>
+    </div>
+    <script>
+            const app = new Vue ({
+                el:'#app',
+                data(){
+                    return{
+                        'readnum':0
+                    }
+                },
+                created:function(){
+                    axios({
+                        method:'get',
+                        url:'/blog/getReadNum?id='+83                    }).then((res)=>{
+                        this.readnum = res.data
+                    })
+                }
+            })
+    </script>
+</body>
+</html>
