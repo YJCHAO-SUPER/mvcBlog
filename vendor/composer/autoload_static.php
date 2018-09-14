@@ -14,7 +14,9 @@ class ComposerStaticInit01b486640ac96bc1aac7893ae76999df
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Predis\\' => 7,
+            'PhpOffice\\PhpSpreadsheet\\' => 25,
         ),
         'E' => 
         array (
@@ -23,9 +25,17 @@ class ComposerStaticInit01b486640ac96bc1aac7893ae76999df
     );
 
     public static $prefixDirsPsr4 = array (
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Predis\\' => 
         array (
             0 => __DIR__ . '/..' . '/predis/predis/src',
+        ),
+        'PhpOffice\\PhpSpreadsheet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
