@@ -12,7 +12,7 @@
         <h2><?php echo $blogContent['title']?></h2>
         <span>写于:<?php echo $blogContent['created_at']?></span>
         <span>浏览量：{{ readnum }}</span>
-        <p><?php echo $blogContent['content']?></p>
+        <p><?php echo e($blogContent['content'])?></p>
     </div>
     <script>
             const app = new Vue ({

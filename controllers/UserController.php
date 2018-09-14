@@ -14,7 +14,7 @@ use models\Users;
 
 class UserController
 {
-//    显示页面
+//    显示注册页面
     function regist(){
 
         view('User.register',[]);
@@ -148,6 +148,97 @@ class UserController
         unset($_SESSION['email']);
         unset($_SESSION['id']);
         header("location: /user/login");
+    }
+
+//    显示头像页面
+    function avatar(){
+        if(isset($_SESSION['id'])){
+            view("User.avatar",[]);
+        }else{
+            header("location:/user/login");
+        }
+    }
+
+//    上传头像
+    function setAvatar(){
+
+//        设置图片目录
+         $uploadDir = ROOT."\\public\\uploads";
+//         当天的日期
+         $date =  date("Ymd");
+//          截取图片后缀
+         $ext= strrchr($_FILES['avatar']['name'],'.');
+//         判断是不是目录  如果没有这个目录就创建
+         if(!is_dir($uploadDir.'\\'.$date)){
+             mkdir($uploadDir.'\\'.$date,0777);
+         }
+//        生成唯一的图片名
+        $name = md5(time().rand(1,9999));
+//         完整的文件名
+        $fullName = $uploadDir.'\\'.$date.'\\'.$name.$ext;
+//        将图片从服务器的临时文件移动到指定目录
+        move_uploaded_file($_FILES['avatar']['tmp_name'],$fullName);
+
+    }
+
+//     显示上传多张图片页面
+    function  upload(){
+        if(isset($_SESSION['id'])){
+            view("User.AllAvatar",[]);
+        }else{
+            header("location:/user/login");
+        }
+    }
+
+//    上传多张图片
+    function uploadAll(){
+
+//        设置图片目录
+        $uploadDir = ROOT."\\public\\uploads";
+//         当天的日期
+        $date =  date("Ymd");
+//         判断是不是目录  如果没有这个目录就创建
+        if(!is_dir($uploadDir.'\\'.$date)){
+            mkdir($uploadDir.'\\'.$date,0777);
+        }
+//        循环五张图片
+//        $_FILES['avatar']['name'] as $k => $v  $k取出name值的下标
+        foreach($_FILES['avatar']['name'] as $k => $v){
+//              生成唯一的图片名
+            $name = md5(time().rand(1,9999));
+//              截取图片后缀
+            $ext= strrchr($v,'.');
+//              移动图片
+//            $_FILES['avatar']['tmp_name'][$k]  临时文件的下标
+            move_uploaded_file($_FILES['avatar']['tmp_name'][$k],$uploadDir.'\\'.$date.'\\'.$name.$ext);
+
+        }
+
+
+    }
+
+//    上传片合成图
+    function uploadBig(){
+
+        $img = $_FILES['img'];
+        $i = $_POST['i'];
+        $count = $_POST['count'];
+        $perSize = $_POST['perSize'];
+        $name = "big_".$_POST['name'];
+
+        move_uploaded_file($img['tmp_name'],ROOT.'\\tmp\\'.$i);
+        $redis = \libs\Redis::getInstance();
+        $all = $redis->incr($name);
+        if($all == $count){
+            $handle = fopen(ROOT.'\\public\\uploads\\big\\'.$name.'.png','a');
+            for ($i=0;$i<$count;$i++){
+                fwrite($handle,file_get_contents(ROOT.'\\tmp\\'.$i));
+                unlink(ROOT.'\\tmp\\'.$i);
+            }
+            fclose($handle);
+            $redis->del($name);
+        }
+
     }
 
 

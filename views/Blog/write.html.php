@@ -15,6 +15,9 @@
     <h2>写日志</h2>
     <br>
     <form action="/write/write" method="post">
+
+        <input type="hidden" name="_token" value="<?=csrf()?>">
+
     标题：<input type="text" name="title" value="写点什么吧..."><br>
 
     内容：<br>

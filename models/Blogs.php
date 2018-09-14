@@ -117,6 +117,7 @@ class Blogs extends Base
 
 //    修改文章
     function updateBlog($title,$content,$display,$id){
+
         $sql = "update blogs set title=?,content=?,display=? where id=?";
         $stmt = self::$pdo->prepare($sql);
         $stmt->execute([$title,$content,$display,$id]);

@@ -7,6 +7,11 @@
  */
 
 return array(
+    'redis' => [
+        'scheme' => 'tcp',
+        'host'   => '127.0.0.1',
+        'port'   => 6379,
+    ],
     'email' => array(
         'host'=>'smtp.163.com',
         'port'=>'25',

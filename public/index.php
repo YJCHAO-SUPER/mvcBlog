@@ -6,6 +6,19 @@ ini_set('session.save_path', 'tcp://127.0.0.1:6379?database=3');
 
 session_start();
 
+// 如果用户以 POST 方式访问网站时，需要验证令牌
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            if(!isset($_FILES['img'])){
+                if(!isset($_POST['_token']))
+                    die('违法操作！');
+
+                if($_POST['_token'] != $_SESSION['token'])
+                    die('违法操作！');
+            }
+
+
+        }
 
 //  定义根目录
     define('ROOT',dirname(__DIR__));
@@ -52,6 +65,51 @@ session_start();
         $viewName = str_replace('.','\\',$viewName);
         include ROOT.'\\views\\'.$viewName.'.html.php';
     }
+
+//    防止csrf攻击
+    function csrf()
+        {
+//            session_destroy();
+            if(!isset($_SESSION['token']))
+            {
+                // 生成一个随机的字符串
+                $token = md5( rand(1,99999) . microtime() );
+                $_SESSION['token'] = $token;
+            }else {
+                $token = $_SESSION['token'];
+            }
+            return $token;
+        }
+
+    //    防止XSS攻击
+    function e($content){
+        // 1. 生成配置对象
+        $config = \HTMLPurifier_Config::createDefault();
+
+        // 2. 配置
+        // 设置编码
+        $config->set('Core.Encoding', 'utf-8');
+        $config->set('HTML.Doctype', 'HTML 4.01 Transitional');
+        // 设置缓存目录
+        $config->set('Cache.SerializerPath', ROOT.'\\cache');
+        // 设置允许的 HTML 标签
+        $config->set('HTML.Allowed', 'div,b,strong,i,em,a[href|title],ul,ol,ol[start],li,p[style],br,span[style],img[width|height|alt|src],*[style|class],pre,hr,code,h2,h3,h4,h5,h6,blockquote,del,table,thead,tbody,tr,th,td');
+        // 设置允许的 CSS
+        $config->set('CSS.AllowedProperties', 'font,font-size,font-weight,font-style,margin,width,height,font-family,text-decoration,padding-left,color,background-color,text-align');
+        // 设置是否自动添加 P 标签
+        $config->set('AutoFormat.AutoParagraph', TRUE);
+        // 设置是否删除空标签
+        $config->set('AutoFormat.RemoveEmpty', true);
+
+        // 3. 过滤
+        // 创建对象
+        $purifier = new \HTMLPurifier($config);
+        // 过滤
+        $clean_html = $purifier->purify($content);
+
+        return $clean_html;
+    }
+
 
 //    定义config
     function config($configName){

@@ -10,6 +10,7 @@
 
     <form action="/user/login" method="post">
         <?php echo @$error;?>
+        <input type="hidden" name="_token" value="<?=csrf()?>">
         <div>
             邮箱：<input type="text" name="email">
         </div>

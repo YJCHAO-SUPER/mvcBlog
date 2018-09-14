@@ -27,6 +27,7 @@
 
             <a class="head" href="/blog/MyBlogList">日志列表页</a>
             <a class="head" href="/write/create">写日志</a>
+            <a class="head"  href="/user/avatar">上传头像</a>
             <?php echo isset($_SESSION['email'])?$_SESSION['email']:'' ?>
             <a class="head" href="/user/logout">退出</a>
 
