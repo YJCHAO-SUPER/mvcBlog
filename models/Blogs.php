@@ -132,5 +132,32 @@ class Blogs extends Base
 
     }
 
+//    点赞
+    function like($userId,$articleId){
 
+        $stmt = self::$pdo->prepare("insert into praises(user_id,article_id) VALUES (?,?)");
+        $stmt->execute([$userId,$articleId]);
+
+
+    }
+
+//    查点赞
+    function  findLike($userId,$articleId){
+
+        $stmt = self::$pdo->prepare("select * from praises where user_id = ? and article_id = ?");
+        $stmt->execute([$userId,$articleId]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
+
+
+    function getLikeUserByArticleId($id){
+
+        $stmt = self::$pdo->prepare("select avatar,email,b.id from praises as a ,users as b where article_id = ? and a.user_id = b.id");
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
 }

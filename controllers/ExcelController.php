@@ -63,6 +63,7 @@ class ExcelController
         // 读取服务器上的一个文件并以文件流的形式输出给浏览器
         readfile($file);
 
+
     }
 
 

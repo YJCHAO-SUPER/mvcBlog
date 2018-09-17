@@ -9,8 +9,9 @@ namespace controllers;
 
 use models\Blogs;
 use models\Redis;
+use models\Users;
 
-class BlogController
+class BlogController extends BaseController
 {
 //    首页生成静态页面
     function getBlogHtml(){
@@ -54,10 +55,15 @@ class BlogController
 
         $blog = new Blogs();
         $blogContent = $blog->getBlogById($id);
-//        var_dump($content);
+//        var_dump($blogContent);
+
+        $getAvatarArray = $blog->getLikeUserByArticleId($id);
+//        var_dump($result);
+
 
         view('Content.content',[
-            'blogContent' => $blogContent
+            'blogContent' => $blogContent,
+            'getAvatarArray' => $getAvatarArray
         ]);
 
 //        include ROOT.'\\public\\content\\'.$id.'.html';
@@ -119,6 +125,41 @@ class BlogController
             view('Blog.mylist',[
                 'selfBlog'=>$selfBlog
             ]);
+
+        }else{
+            header("location:/user/login");
+        }
+
+    }
+
+//    点赞
+    function submitLike(){
+
+        if(isset($_SESSION['id'])){
+
+            $articleId = $_GET['id'];
+            $userId = $_SESSION['id'];
+            $blogs = new Blogs();
+            // 一：去数据库找点赞表，如果已经点赞过，则返回已经点赞过啦
+            //如何判断已经点赞过了？
+            $result = $blogs->findLike($userId,$articleId);
+            if($result){
+                $data = array(
+                  'code'=>401,
+                  'statu'=>false,
+                  'msg'=>'你已经点赞过啦！'
+                );
+                $this->response($data);
+            }else{
+                //二：如果没有点赞过，则插入数据库
+                $blogs->like($userId,$articleId);
+                $data = array(
+                    'code' => 200,
+                    'statu' => true,
+                    'msg' => '点赞成功！'
+                );
+                $this->response($data);
+            }
 
         }else{
             header("location:/user/login");
