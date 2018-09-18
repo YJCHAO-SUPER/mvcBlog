@@ -9,6 +9,13 @@ session_start();
 // 如果用户以 POST 方式访问网站时，需要验证令牌
     if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
+            // 接收原始数据
+            $data = file_get_contents('php://input');
+            // 转成数组
+            $start = json_decode($data, TRUE);
+            if($start!=null) {
+                $_POST = $start;
+            }
             if(!isset($_FILES['img'])){
                 if(!isset($_POST['_token']))
                     die('违法操作！');

@@ -121,6 +121,7 @@ class UserController
 
                         $_SESSION['id'] = $my['id'];
                         $_SESSION['email'] = $my['email'];
+                        $_SESSION['avatar'] = $my['avatar'];
                         header("location: /index/index");
 
                     }
