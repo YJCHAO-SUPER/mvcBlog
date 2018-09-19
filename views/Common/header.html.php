@@ -13,6 +13,11 @@
     h1{
         color: brown;
     }
+    .avatar{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
 </style>
 
 <h1>智聊系统</h1>
@@ -29,6 +34,7 @@
             <a class="head" href="/write/create">写日志</a>
             <a class="head"  href="/user/avatar">上传头像</a>
             <a class="head" href="/excel/makeExcel">导出Excel</a>
+            <img class="avatar" src="http://localhost:9999/<?php echo $_SESSION['avatar']; ?>" alt="">
             <?php echo isset($_SESSION['email'])?$_SESSION['email']:'' ?>
             <a class="head" href="/user/logout">退出</a>
 

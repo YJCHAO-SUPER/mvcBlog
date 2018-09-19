@@ -8,6 +8,7 @@
 namespace controllers;
 
 use libs\Mail;
+use libs\Uploader;
 use models\ActivationCodes;
 use models\Redis;
 use models\Users;
@@ -162,23 +163,36 @@ class UserController
 
 //    上传头像
     function setAvatar(){
+////        设置图片目录
+//         $uploadDir = ROOT."\\public\\uploads";
+////         当天的日期
+//         $date =  date("Ymd");
+////          截取图片后缀
+//         $ext= strrchr($_FILES['avatar']['name'],'.');
+////         判断是不是目录  如果没有这个目录就创建
+//         if(!is_dir($uploadDir.'\\'.$date)){
+//             mkdir($uploadDir.'\\'.$date,0777);
+//         }
+////        生成唯一的图片名
+//        $name = md5(time().rand(1,9999));
+////         完整的文件名
+//        $fullName = $uploadDir.'\\'.$date.'\\'.$name.$ext;
+////        将图片从服务器的临时文件移动到指定目录
+//        move_uploaded_file($_FILES['avatar']['tmp_name'],$fullName);
 
-//        设置图片目录
-         $uploadDir = ROOT."\\public\\uploads";
-//         当天的日期
-         $date =  date("Ymd");
-//          截取图片后缀
-         $ext= strrchr($_FILES['avatar']['name'],'.');
-//         判断是不是目录  如果没有这个目录就创建
-         if(!is_dir($uploadDir.'\\'.$date)){
-             mkdir($uploadDir.'\\'.$date,0777);
-         }
-//        生成唯一的图片名
-        $name = md5(time().rand(1,9999));
-//         完整的文件名
-        $fullName = $uploadDir.'\\'.$date.'\\'.$name.$ext;
-//        将图片从服务器的临时文件移动到指定目录
-        move_uploaded_file($_FILES['avatar']['tmp_name'],$fullName);
+//        调用类 获取图片路径
+        $file = $_FILES['avatar'];
+        $uploader = Uploader::make();
+        $newPath = $uploader->upload($file,'big_img');
+
+//        取出数据库旧图片路径 删除
+        $userId = $_SESSION['id'];
+        $users = new Users();
+        $old = $users->getOldAvatar($userId);
+        unlink(ROOT."\\public\\".$old);
+
+//        把新的头像更新数据库
+        $users->updateNewAvatar($newPath,$userId);
 
     }
 

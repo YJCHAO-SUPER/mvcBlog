@@ -41,6 +41,22 @@ class Users extends Base
 
     }
 
+//      取出旧头像路径
+    function getOldAvatar($userId){
 
+        $stmt = self::$pdo->prepare("select avatar from users where id=?");
+        $stmt->execute([$userId]);
+        $result = $stmt->fetch(PDO::FETCH_COLUMN);
+        return $result;
+
+    }
+
+//    更新新的头像
+    function updateNewAvatar($newPath,$userId){
+
+        $stmt = self::$pdo->prepare("update users set avatar=? where id=?");
+        $stmt->execute([$newPath,$userId]);
+
+    }
 
 }
