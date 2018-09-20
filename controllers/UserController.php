@@ -290,5 +290,11 @@ class UserController
 
     }
 
+//    活跃用户
+    function  getActiveUsers(){
+        $users = new Users();
+        $users->computeActiveUsers();
+    }
+
 
 }

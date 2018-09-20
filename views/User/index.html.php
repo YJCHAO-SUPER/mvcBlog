@@ -91,6 +91,15 @@
             <a href="?keyword=<?php echo $_GET['keyword'];?>&page=<?php echo $pageData['totalPage'];?>" style="color: orangered"><?php echo $pageData['totalPage'];?></a>
     <?php   } ?>
 
+    <hr>
+
+    <h2>本周活跃用户</h2>
+    <ul>
+        <?php foreach($activeUser as $v) { ?>
+            <li><img width="50px" height="50px" src="<?php echo "http://localhost:9999\\".$v['avatar'] ? "http://localhost:9999\\".$v['avatar'] : 'http://localhost:9999\\images\\1.png'; ?>" title="<?php echo $v['email']?>"> </li>
+        <?php };?>
+    </ul>
+
 
     <?php view('Common.footer')?>
 </body>

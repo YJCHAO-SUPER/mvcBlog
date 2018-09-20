@@ -64,7 +64,7 @@
         <span class="en">点赞头像</span>
         <div class="head1">
             <?php foreach($getAvatarArray as $v){ ?>
-            <img class="wan" src="<?php echo $v['avatar']; ?>" alt="">
+            <img class="wan" src="http://localhost:9999\\<?php echo $v['avatar']; ?>" alt="">
             <?php } ?>
         </div>
         <hr>

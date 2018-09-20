@@ -8,6 +8,7 @@
 namespace controllers;
 
 use models\Blogs;
+use models\Users;
 
 class IndexController
 {
@@ -45,9 +46,14 @@ class IndexController
             'totalPage'=>$result['num']
         );
 
+        $users = new Users();
+        $activeUser = $users->getActiveUsers();
+//        var_dump($user);
+
         view("User.index",[
             'allArticle'=>$result['allArticle'],
-            'pageData'=>$pageData
+            'pageData'=>$pageData,
+            'activeUser' => $activeUser
         ]);
 
 //        include ROOT."\\public\\index.html";

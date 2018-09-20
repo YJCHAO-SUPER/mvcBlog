@@ -107,9 +107,10 @@ class BlogController extends BaseController
 //    把所有redis里的阅读量存到数据库
     function getRedisRead(){
         while (true){
-            sleep(60);
             $redis = new Redis();
             $redis->writeRead();
+            sleep(60);
+
         }
     }
 
