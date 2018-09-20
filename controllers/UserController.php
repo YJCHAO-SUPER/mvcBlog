@@ -7,11 +7,13 @@
  */
 namespace controllers;
 
+use function GuzzleHttp\Psr7\str;
 use libs\Mail;
 use libs\Uploader;
 use models\ActivationCodes;
 use models\Redis;
 use models\Users;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class UserController
 {
@@ -184,15 +186,35 @@ class UserController
         $file = $_FILES['avatar'];
         $uploader = Uploader::make();
         $newPath = $uploader->upload($file,'big_img');
-
+        $Dir = ROOT."\\public\\";
+        $image = Image::make($newPath);
+        $image->crop((int)$_POST['w'],(int)$_POST['h'],(int)$_POST['x'],(int)$_POST['y']);
+        $image->save($newPath);
+        $middleImage = Image::make($newPath);
+        $middleImage->resize(50,50);
+        $middleImagePath = str_replace("big_img","middle_img",$newPath);
+        $middleImage->save($middleImagePath);
+        $smallImage = Image::make($newPath);
+        $smallImage->resize(25,25);
+        $smallImagePath = str_replace("big_img","small_img",$newPath);
+        $smallImage->save($smallImagePath);
 //        取出数据库旧图片路径 删除
         $userId = $_SESSION['id'];
         $users = new Users();
-        $old = $users->getOldAvatar($userId);
-        unlink(ROOT."\\public\\".$old);
+        $oldBig = $users->getOldAvatar($userId);
+        $oldMiddle = str_replace("big_img","middle_img",$oldBig);
+        $oldSmall = str_replace("big_img","small_img",$oldBig);
+        @unlink(ROOT."\\public\\".$oldBig);
+        @unlink(ROOT."\\public\\".$oldMiddle);
+        @unlink(ROOT."\\public\\".$oldSmall);
 
 //        把新的头像更新数据库
         $users->updateNewAvatar($newPath,$userId);
+        $_SESSION['avatar'] = $newPath;
+        $_SESSION['middle_avatar'] = $middleImagePath;
+        $_SESSION['small_avatar'] = $smallImagePath;
+
+        header("location:/user/avatar");
 
     }
 
