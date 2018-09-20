@@ -187,9 +187,19 @@ class UserController
         $uploader = Uploader::make();
         $newPath = $uploader->upload($file,'big_img');
         $Dir = ROOT."\\public\\";
+
+//        裁剪图片选中区域 把值传给服务器端
         $image = Image::make($newPath);
         $image->crop((int)$_POST['w'],(int)$_POST['h'],(int)$_POST['x'],(int)$_POST['y']);
         $image->save($newPath);
+
+//        生成水印图
+        $water = Image::make($newPath);
+        $water->insert($Dir.'images\\1.png');
+        $waterPath= str_replace("big_img","water_img",$newPath);
+        $water->save($waterPath);
+
+//        生成中小缩略图
         $middleImage = Image::make($newPath);
         $middleImage->resize(50,50);
         $middleImagePath = str_replace("big_img","middle_img",$newPath);
@@ -198,6 +208,7 @@ class UserController
         $smallImage->resize(25,25);
         $smallImagePath = str_replace("big_img","small_img",$newPath);
         $smallImage->save($smallImagePath);
+
 //        取出数据库旧图片路径 删除
         $userId = $_SESSION['id'];
         $users = new Users();
@@ -210,6 +221,7 @@ class UserController
 
 //        把新的头像更新数据库
         $users->updateNewAvatar($newPath,$userId);
+//        把头像信息保存到session里
         $_SESSION['avatar'] = $newPath;
         $_SESSION['middle_avatar'] = $middleImagePath;
         $_SESSION['small_avatar'] = $smallImagePath;
